@@ -12,17 +12,15 @@ for line in lines:
 
     occuranceseSplit = policySplit[0].split('-')
 
-    minOccur = int(occuranceseSplit[0]) #min
-    maxOccur = int(occuranceseSplit[1]) #max
+    firstChar = int(occuranceseSplit[0]) #min
+    secChar = int(occuranceseSplit[1]) #max
 
-    occurances = 0
+    if password[firstChar] == password[secChar]:
+        continue
 
-    for i in password:
-        if i == policy:
-            occurances+=1
+    if password[firstChar] == policy or password[secChar] == policy:
+        correctPasswords.append(lines)
 
-    if occurances >= minOccur and occurances <= maxOccur:
-        correctPasswords.append(line)
 
 #print(correctPasswords)
 
