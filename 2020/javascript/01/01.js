@@ -1,5 +1,7 @@
 fs = require('fs');
 
+//diese zeile ist unnötig
+
 var input = "";
 var product = 0;
 
