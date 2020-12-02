@@ -4,7 +4,8 @@ var input = fs.readFileSync('inputAlFe.txt', 'utf8');
 var inputArray = input.split('\n');
 //---end load puzzle
 
-var solveA = 0
+var solveA = 0;
+var solveB= 0;
 
 for (i in inputArray) {
 //	//store password
@@ -16,7 +17,7 @@ for (i in inputArray) {
 	var rule = splitLine[0]; 
 	var password = splitLine[1]; 
 	
-	// split the rule in vars
+	// prepare vars for policy 1
 	var splitRule = rule.split(' ');
 	var policyLetter = splitRule[1];
 	var policyRule = splitRule[0];
@@ -25,7 +26,7 @@ for (i in inputArray) {
 	var min = SplitChar[0];
 	var max = SplitChar[1];
 	
-	//check policy
+	//check policy 1
 	var occurances = 0
 	for (var letter in password) {
 		if (password[letter] == policyLetter) {
@@ -37,7 +38,21 @@ for (i in inputArray) {
 			solveA++;
 		}
 	}
+	
+	//prepare vars for policy 2
+	var firstCar = password[min];
+	var secondChar = password[max];
+	
+	if (firstCar == secondChar){
+		
+	} else {
+			if (firstCar == policyLetter) solveB++
+			if (secondChar == policyLetter) solveB++
+		}
+
+	
 }
 
 
 console.log(solveA);
+console.log(solveB);
