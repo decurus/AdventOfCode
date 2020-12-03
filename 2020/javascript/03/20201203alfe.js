@@ -4,6 +4,7 @@ var input = fs.readFileSync('inputAlFe.txt', 'utf8');
 //---end load puzzle
 
 var inputArray = input.split('\r');
+var inputArrayLength = inputArray.length
 
 var solveA = 0;
 var solveB = 0;
@@ -13,9 +14,10 @@ var i2 = 0;
 
 var godown = 1;
 var goright = 3;
+
 var LineLength = inputArray[1].length;
 
-for ( i1 ; i1 < inputArray.length ; i1 = i1 + godown ) {
+for ( i1 ; i1 < inputArrayLength ; i1 = i1 + godown ) {
 	var activeLine = inputArray[i1];
 	var checkChar = activeLine[i2];
 	
