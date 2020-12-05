@@ -29,25 +29,20 @@ for (i1 in inputArray) {
 	}
 	
 	//store in list
-	seatList.push(seatNumber)
+	seatList.push(seatNumber);
 }
 
 //found missing seat
-seatList.sort(function(a, b){return a-b});;
-var seatNr = 0
-var seats = seatList.length
+seatList.sort(function(a, b){return a-b});
+var seatNr = 0;
+var seats = seatList.length;
 for ( var seatNr=0; seatNr < seatList.length; seatNr++ ) {
 	var currentSeat = seatList[seatNr];
-	var nextSeat = seatList[seatNr + 1]
+	var nextSeat = seatList[seatNr + 1];
 	if (currentSeat + 1 < nextSeat) {
-		solveB = currentSeat + 1
+		solveB = currentSeat + 1;
 	}
 }
-
-
-console.log(seatList)
-
-
 
 console.log(solveA);
 console.log(solveB);
